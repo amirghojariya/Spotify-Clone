@@ -10,17 +10,17 @@
 body {
     background-color: rgb(5, 5, 5);
     color: rgb(245, 245, 245);
-    overflow: hidden;
+    overflow: scroll;
 }
 
 
 .left {
-    width: 22vw;
+    width: 25vw;
     padding: 5px;
 }
 
 .right {
-    width: 78vw;
+    width: 75vw;
 }
 
 
@@ -227,7 +227,7 @@ body {
 .playbar {
     position: absolute;
     bottom: 0;
-    background-color: rgb(173, 201, 173);
+    background-color: rgb(255, 255, 255);
     width: 100%;
     padding: 12px;
 }
@@ -235,12 +235,35 @@ body {
 .songbutton {
     display: flex;
     justify-content: center;
-    gap: 16px;  
-    
+    gap: 16px;
+
 }
 
 .songbutton img {
     width: 20px;
+}
+
+.songlist ul {
+    padding: 4px 15px;
+    margin: -10px;
+}
+
+
+.songlist ul li {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 9px 0;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.playnow {
+    padding: 9px 0px 0px 40px;
 }
 
 

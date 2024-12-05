@@ -45,6 +45,9 @@ body::-webkit-scrollbar {
   /* For Firefox */
   body {
     scrollbar-width: thin; /* Thin scrollbar */
-    scrollbar-color: #333333 #121212; /* Thumb color and track color */
+    scrollbar-color: #1f1f1f #121212; /* Thumb color and track color */
   }
+  
+  
+  
   

@@ -19,37 +19,52 @@ async function getsongs() {
     return songs
 }
 
-
+const playMusic = (track)=> {
+    let audio = new Audio ("/songs/", track)
+    audio.play()
+}
 
 
 async function main() {
 
+    let currentsong;
+
     // Get the list of all the songs
+
     let songs = await getsongs()
-    console.log(songs)
+
+
+    // show all the songs in the playlist
 
     let songUL = document.querySelector(".songlist").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + `<li> ${song.replaceAll("%20", " " )} </li>`;        
+        songUL.innerHTML = songUL.innerHTML + `<li><img  class="invert music-icon" src="svg/music.svg" alt="">
+                            <div class="info">
+                                <div>${song.replaceAll("%20", " ")}</div>
+                                <div>Aamir</div>
+                            </div>
+                            <div class="playnow">
+                                <span>Play Now</span>
+                                <img class="invert play-icon" src="svg/play.svg" alt="">
+                            </div>  </li>`;
+
     }
 
-    
-    
 
-    // play the first song
-    var audio = new Audio(songs[0]);
-    // audio.play();
+// Attach an event listener to each song
 
-    audio.addEventListener("loadeddata", () => {
-        console.log = (audio.duration, audio.currentSrc, audio.currentTime)
-    
-        // The duration variable now holds the duration (in seconds) of the audio clip
-    });
+Array.from(document.querySelector(".songlist").getElementsByTagName("li")).forEach(e=>{
+    e.addEventListener("click", element=>{
+
+        console.log(e.querySelector(".info").firstElementChild.innerHTML)
+        playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim())
+    })
+})
 
 }
 
 
-main() 
+main()
 
 
 
